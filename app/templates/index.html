@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FireSense - Risk Prediction</title>
+</head>
+<body>
+  <h2>FireSense - Fire Equipment Risk Prediction</h2>
+
+  <form action="/predict" method="post">
+    <h3>Equipment</h3>
+    <label>Equipment Type:</label>
+    <select name="equipment_type" required>
+      <option>Fire Alarm</option>
+      <option>Smoke Detector</option>
+      <option>Sprinkler</option>
+      <option>Fire Extinguisher</option>
+      <option>Emergency Light</option>
+    </select><br><br>
+
+    <label>Manufacturer:</label>
+    <select name="manufacturer" required>
+      <option>Local</option>
+      <option>Honeywell</option>
+      <option>Viking</option>
+      <option>Siemens</option>
+      <option>Other</option>
+    </select><br><br>
+
+    <label>Condition:</label>
+    <select name="condition" required>
+      <option>Good</option>
+      <option>Fair</option>
+      <option>Poor</option>
+    </select><br><br>
+
+    <label>Install Year:</label>
+    <input type="number" name="install_year" value="2018" required><br><br>
+
+    <label>Equipment Age (years):</label>
+    <input type="number" name="equipment_age_years" value="5" required><br><br>
+
+    <h3>Maintenance</h3>
+    <label>Months Since Service:</label>
+    <input type="number" name="months_since_service" value="6" required><br><br>
+
+    <label>Service Interval (months):</label>
+    <input type="number" name="service_interval_months" value="12" required><br><br>
+
+    <label>Fault Count:</label>
+    <input type="number" name="fault_count" value="0" required><br><br>
+
+    <label>Service Quality Score (1-5):</label>
+    <input type="number" name="service_quality_score" min="1" max="5" value="4" required><br><br>
+
+    <h3>Environment & Usage</h3>
+    <label>Humidity Level:</label>
+    <select name="humidity_level" required>
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select><br><br>
+
+    <label>Temperature Avg (°C):</label>
+    <input type="number" step="0.1" name="temperature_avg_c" value="28" required><br><br>
+
+    <label>Coastal Exposure:</label>
+    <select name="coastal_exposure" required>
+      <option>No</option>
+      <option>Yes</option>
+    </select><br><br>
+
+    <label>Daily Exposure Hours:</label>
+    <input type="number" step="0.1" name="daily_exposure_hours" value="8" required><br><br>
+
+    <label>Power Fluctuation Level:</label>
+    <select name="power_fluctuation_level" required>
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select><br><br>
+
+    <h3>Technician / Audit</h3>
+    <label>Technician Experience (years):</label>
+    <input type="number" name="technician_experience_years" value="5" required><br><br>
+
+    <label>Certification Status:</label>
+    <select name="certification_status" required>
+      <option>Valid</option>
+      <option>Expired</option>
+    </select><br><br>
+
+    <label>Last Audit Score (0-100):</label>
+    <input type="number" name="last_audit_score" value="85" required><br><br>
+
+    <h3>Activation / Location</h3>
+    <label>Activated Before:</label>
+    <select name="activated_before" required>
+      <option>No</option>
+      <option>Yes</option>
+    </select><br><br>
+
+    <label>Activation Count:</label>
+    <input type="number" name="activation_count" value="0" required><br><br>
+
+    <label>Floor Level:</label>
+    <input type="number" name="floor_level" value="1" required><br><br>
+
+    <label>Near Emergency Exit:</label>
+    <select name="near_emergency_exit" required>
+      <option>No</option>
+      <option>Yes</option>
+    </select><br><br>
+
+    <label>Backup Power Available:</label>
+    <select name="backup_power_available" required>
+      <option>No</option>
+      <option>Yes</option>
+    </select><br><br>
+
+    <label>Usage Level:</label>
+    <select name="usage_level" required>
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select><br><br>
+
+    <button type="submit">Predict Risk</button>
+  </form>
+</body>
+</html>
